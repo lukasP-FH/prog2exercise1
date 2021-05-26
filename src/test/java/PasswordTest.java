@@ -7,6 +7,13 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PasswordTest {
 
     @Test
+    @DisplayName("Nullchecker")
+    public void testPasswordNull(){
+        Password p = new Password(null);
+        assertFalse(p.checkPassword(), "Password should not be null!");
+    }
+
+    @Test
     @DisplayName("Check Password Length between 8 and 25 characters")
     public void testPasswordLength(){
         Password p = new Password("password");
