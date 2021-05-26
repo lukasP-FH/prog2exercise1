@@ -6,7 +6,7 @@ public class Password {
     }
 
     public boolean checkPassword() {
-        return checkPasswordLength();
+        return (pass != null && checkPasswordLength());
     }
 
 
