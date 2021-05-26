@@ -11,4 +11,11 @@ public class PasswordTest {
         assertTrue(p.checkPasswordLength(), "Password should be between 8 and 25 characters!");
     }
 
+    @Test
+    @DisplayName("Check Password Length too short")
+    public void testPasswordLengthTooShort(){
+        Password p = new Password("pass");
+        assertTrue(p.checkPasswordLength(), "Password should be between 8 and 25 characters!");
+    }
+
 }
