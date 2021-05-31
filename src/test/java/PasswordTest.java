@@ -34,4 +34,11 @@ public class PasswordTest {
         assertFalse(p.checkPasswordLength(), "Password too long!");
     }
 
+    @Test
+    @DisplayName("Check Password A-Z and a-z")
+    public void testPasswordUppercaseAndLowercase(){
+        Password p = new Password("BIGandSMALL");
+        assertTrue(p.checkPasswordLetters(), "Password needs Upper- and Lowercase Letters!");
+    }
+
 }
