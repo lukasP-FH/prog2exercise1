@@ -13,4 +13,6 @@ public class Password {
     public boolean checkPasswordLength() {
         return (8 <= pass.length() && pass.length() <= 25);
     }
+
+    public boolean checkPasswordLetters() { return pass.matches("^(?=.*[a-z])(?=.*[A-Z]).+$"); }
 }

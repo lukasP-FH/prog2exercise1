@@ -50,7 +50,7 @@ public class PasswordTest {
 
     @Test
     @DisplayName("Check Password no Lowercase")
-    public void testPasswordNoUppercase(){
+    public void testPasswordNoLowercase(){
         Password p = new Password("EVERYTHINGBIG");
         assertFalse(p.checkPasswordLetters(), "Password needs Lowercase Letters");
     }
