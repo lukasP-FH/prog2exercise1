@@ -45,15 +45,24 @@ public class PasswordTest {
     @DisplayName("Check Password no Uppercase")
     public void testPasswordNoUppercase(){
         Password p = new Password("everythingsmall");
-        assertFalse(p.checkPasswordLetters(), "Password needs Uppercase Letters");
+        assertFalse(p.checkPasswordLetters(), "Password needs Uppercase Letters!");
     }
 
     @Test
     @DisplayName("Check Password no Lowercase")
     public void testPasswordNoLowercase(){
         Password p = new Password("EVERYTHINGBIG");
-        assertFalse(p.checkPasswordLetters(), "Password needs Lowercase Letters");
+        assertFalse(p.checkPasswordLetters(), "Password needs Lowercase Letters!");
     }
+
+    @Test
+    @DisplayName("Check Password for Numbers")
+    public void testPasswordNumbers(){
+        Password p = new Password("123445123323");
+        assertFalse(p.checkPasswordLetters(), "Password needs Numbers!");
+    }
+
+
 
 
 
