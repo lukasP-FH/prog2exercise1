@@ -48,4 +48,13 @@ public class PasswordTest {
         assertFalse(p.checkPasswordLetters(), "Password needs Uppercase Letters");
     }
 
+    @Test
+    @DisplayName("Check Password no Lowercase")
+    public void testPasswordNoUppercase(){
+        Password p = new Password("EVERYTHINGBIG");
+        assertFalse(p.checkPasswordLetters(), "Password needs Lowercase Letters");
+    }
+
+
+
 }
