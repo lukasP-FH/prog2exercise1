@@ -59,14 +59,14 @@ public class PasswordTest {
     @DisplayName("Check Password for Numbers")
     public void testPasswordNumbers(){
         Password p = new Password("123445123323");
-        assertTrue(p.checkPasswordLetters(), "Password needs Numbers!");
+        assertTrue(p.checkPasswordNumbers(), "Password needs Numbers!");
     }
 
     @Test
     @DisplayName("Check Password for no Numbers")
     public void testPasswordNoNumbers(){
         Password p = new Password("NoNumbers");
-        assertFalse(p.checkPasswordLetters(), "Password needs Numbers!");
+        assertFalse(p.checkPasswordNumbers(), "Password needs Numbers!");
     }
 
 
