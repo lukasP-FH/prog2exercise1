@@ -89,4 +89,11 @@ public class PasswordTest {
         Password p = new Password("1245333791");
         assertTrue(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
+
+    @Test
+    @DisplayName("Check Password for more repeating Numbers")
+    public void testPasswordExtraNumbers(){
+        Password p = new Password("11111111111111");
+        assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
 }
