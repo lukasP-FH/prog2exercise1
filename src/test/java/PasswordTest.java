@@ -83,9 +83,10 @@ public class PasswordTest {
         assertFalse(p.checkPasswordSpecialChars(), "Password has wrong Special Chars!");
     }
 
-
-
-
-
-
+    @Test
+    @DisplayName("Check Password for more Numbers")
+    public void testPasswordExtraNumbers(){
+        Password p = new Password("1245333791");
+        assertTrue(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
 }
