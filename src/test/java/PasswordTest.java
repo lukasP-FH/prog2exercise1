@@ -69,6 +69,13 @@ public class PasswordTest {
         assertFalse(p.checkPasswordNumbers(), "Password needs Numbers!");
     }
 
+    @Test
+    @DisplayName("Check Password for Special Chars")
+    public void testPasswordSpecialChars(){
+        Password p = new Password("onlyContains()#$?!%/@");
+        assertTrue(p.checkSpecialChars(), "Password needs atleast one of these ()#$?!%/@");
+    }
+
 
 
 
