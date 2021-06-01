@@ -15,4 +15,6 @@ public class Password {
     }
 
     public boolean checkPasswordLetters() { return pass.matches("^(?=.*[a-z])(?=.*[A-Z]).+$"); }
+
+    public boolean checkPasswordNumbers() { return pass.matches(".*\\d.*");    }
 }
