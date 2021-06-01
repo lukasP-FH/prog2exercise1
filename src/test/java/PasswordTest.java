@@ -96,4 +96,11 @@ public class PasswordTest {
         Password p = new Password("11111111111111");
         assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
+
+    @Test
+    @DisplayName("Check Password for continuous Numbers")
+    public void testPasswordExtraNumbers(){
+        Password p = new Password("12345678910");
+        assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
 }
