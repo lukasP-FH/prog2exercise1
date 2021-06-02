@@ -16,7 +16,9 @@ public class Password {
 
     public boolean checkPasswordNumbers() { return pass.matches(".*\\d.*");    }
 
-    public boolean checkPasswordSpecialChars() { return pass.matches("^(?:[\\d\\w]*[()#$?!%/@][\\d\\w]*)+$");    }
+    //Regex considers _ as a word character
+    //Other Regex: ^(?:[a-zA-Z0-9]*[()#$?!%\/@][a-zA-Z0-9]*)+$ or ^(?:[^\W_]*[()#$?!%\/@][^\W_]*)+$
+    public boolean checkPasswordSpecialChars() { return pass.matches("^(?:\\w*[()#$?!%/@]\\w*)+$");    }
 
     public boolean checkPasswordExtraNumbers() {
         int last = 99; int repeatcount = 0; int contcount = 0;

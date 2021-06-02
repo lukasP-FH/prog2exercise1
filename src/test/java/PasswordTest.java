@@ -131,4 +131,11 @@ public class PasswordTest {
         Password p = new Password("You!1255)(");
         assertTrue(p.checkPassword(), "Password needs to be different!");
     }
+
+    @Test
+    @DisplayName("Check Password False")
+    public void testPassword2(){
+        Password p = new Password("You!1255)(-");
+        assertFalse(p.checkPassword(), "Password needs to be different!");
+    }
 }
