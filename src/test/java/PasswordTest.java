@@ -103,4 +103,25 @@ public class PasswordTest {
         Password p = new Password("12345678910");
         assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
+
+    @Test
+    @DisplayName("Check Password for extended Numbers")
+    public void testPasswordExtraNumbers2(){
+        Password p = new Password("123");
+        assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
+
+    @Test
+    @DisplayName("Check Password for extended Numbers")
+    public void testPasswordExtraNumbers3(){
+        Password p = new Password("111");
+        assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
+
+    @Test
+    @DisplayName("Check Password for extended Numbers")
+    public void testPasswordExtraNumbers4(){
+        Password p = new Password("abc");
+        assertTrue(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
+    }
 }

@@ -20,22 +20,24 @@ public class Password {
 
     public boolean checkPasswordExtraNumbers() {
         int last = 99; int repeatcount = 0; int contcount = 0;
-        for ( int i = 0; i < pass.length(); i++ ){
-            if ( repeatcount>=3 || contcount>=3){
-                return false;
+        for ( char i : pass.toCharArray() ){
+            if ( Character.isDigit(i) ) {
+                if (repeatcount >= 2 || contcount >= 2) {
+                    return false;
+                }
+                if (last == Character.getNumericValue(i)) {
+                    repeatcount++;
+                } else {
+                    repeatcount = 0;
+                }
+                if (last + 1 == Character.getNumericValue(i) || last - 1 == Character.getNumericValue(i)) {
+                    contcount++;
+                } else {
+                    contcount = 0;
+                }
+                last = Character.getNumericValue(i);
             }
-            if ( last == Character.getNumericValue(pass.charAt(i)) ){
-                repeatcount++;
-            } else {
-                repeatcount = 0;
-            }
-            if ( last+1 == Character.getNumericValue(pass.charAt(i)) || last-1 == Character.getNumericValue(pass.charAt(i)) ){
-                contcount++;
-            } else {
-                contcount = 0;
-            }
-            last = Character.getNumericValue(pass.charAt(i));
         }
-        return true;
+        return repeatcount < 2 && contcount < 2;
     }
 }
