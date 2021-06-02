@@ -86,20 +86,20 @@ public class PasswordTest {
     @Test
     @DisplayName("Check Password for more Numbers")
     public void testPasswordExtraNumbers(){
-        Password p = new Password("1245333791");
+        Password p = new Password("124533791");
         assertTrue(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
 
     @Test
     @DisplayName("Check Password for more repeating Numbers")
-    public void testPasswordExtraNumbers(){
+    public void testPasswordExtraNumbersRepeating(){
         Password p = new Password("11111111111111");
         assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
 
     @Test
     @DisplayName("Check Password for continuous Numbers")
-    public void testPasswordExtraNumbers(){
+    public void testPasswordExtraNumbersContinuous(){
         Password p = new Password("12345678910");
         assertFalse(p.checkPasswordExtraNumbers(), "Password needs different Numbers!");
     }
